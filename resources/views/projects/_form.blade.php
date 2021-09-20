@@ -5,9 +5,9 @@
         value="{{ old('title', $project->title) }}">
 </div>
 <div class="form-group">
-    <label for="url">URL del proyecto</label>
-    <input class="form-control border-0 bg-light shadow-sm" id="url" type="text" name="url"
-        value="{{ old('url', $project->url) }}">
+    <label for="slug">slug del proyecto</label>
+    <input class="form-control border-0 bg-light shadow-sm" id="slug" type="text" name="slug"
+        value="{{ old('slug', $project->slug) }}">
 </div>
 
 <div class="form-group">

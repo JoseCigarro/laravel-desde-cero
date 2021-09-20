@@ -75,8 +75,7 @@ class ProjectController extends Controller
         return redirect()
             ->route('projects.show', [
                 'project' => $project,
-            ])
-            ->with(session('status', 'O projecto foi atualizado com exito'));
+            ])->with(session('status', 'O projecto foi atualizado com exito'));
     }
 
     public function destroy(Project $project)
