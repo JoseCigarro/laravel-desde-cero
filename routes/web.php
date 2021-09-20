@@ -9,7 +9,9 @@ use Illuminate\Support\Facades\Route;
 Route::view('/', 'home')->name('home');
 Route::view('/about', 'about')->name('about');
 
-Route::resource('projects', ProjectController::class); //   ===
+Route::resource('projects', ProjectController::class)
+->parameters(['projects' => 'project'])
+->names('projects');; //   ===
 // Route::get('/projects', [ProjectController::class, 'index'])->name('projects.index');
 // Route::get('/projects/create', [ProjectController::class, 'create'])->name('projects.create');
 // Route::get('/projects/{project}/edit', [ProjectController::class, 'edit'])->name('projects.edit');

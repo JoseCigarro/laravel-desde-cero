@@ -2,9 +2,8 @@
 
 namespace App\Http\Requests;
 
-
-use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
+use Illuminate\Foundation\Http\FormRequest;
 
 class SaveProjectRequest extends FormRequest
 {
@@ -28,10 +27,11 @@ class SaveProjectRequest extends FormRequest
         return [
             'title' => 'required',
             'slug' => [
-                'required', 
-                Rule::unique('projects')->ignore($this->route('project'))
+                'required',
+                Rule::unique('projects')->ignore($this->route('project')),
             ],
             'description' => 'required',
+            'image' => ['required', 'image'],
         ];
     }
 
@@ -40,7 +40,6 @@ class SaveProjectRequest extends FormRequest
         return [
             'title.required' => __('O campo titúlo não é válido'),
             'title.slug' => __('O campo Slug não é válido'),
-            'title.unique' => 'Precisas de um titulo único',
             'title.description' => __('O campo Descrição não é válido'),
         ];
     }
